@@ -1,0 +1,28 @@
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url("chili.jpeg");
+  background-size: cover;
+  height: 500px;
+}
+
+.jumbotron h2 {
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.jumbotron h1, h2 {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.jumbotron .btn {
+  margin-top: 40px;
+}
