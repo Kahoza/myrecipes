@@ -1,8 +1,18 @@
 
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url("jalapeno.jpeg");
+  background-size: cover;
+  height: 500px;
+}
+
 #logo {
   float: left;
   font-size: 1.7em;
-  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
@@ -12,3 +22,10 @@
     color: purple;
     text-decoration: none;
   }
+
+.jumbotron h1, h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
