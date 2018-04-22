@@ -9,7 +9,7 @@
     </section>
   </div>
   <div class="col-md-8 well">
-    <h3><%= recipe.name.capitalize %></h3>
+    <h3><%= link_to recipe.name.capitalize, recipe_path(recipe) %></h3>
     <p><%= truncate(recipe.description.capitalize, length: 150) %></p>
     <p>
       <span class="quiet"><small>Created <%= time_ago_in_words(recipe.created_at) %> ago</small>
