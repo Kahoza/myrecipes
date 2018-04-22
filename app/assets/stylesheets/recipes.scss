@@ -8,7 +8,13 @@
 
 .well {
   margin-righ: 0px;
+  a {
+    color: #DC0019;
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
 }
-
-
 
