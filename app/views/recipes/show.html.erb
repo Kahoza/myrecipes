@@ -2,9 +2,17 @@
 <hr/>
 <div class="well col-md-8 col-md-offset-2">
   <h4 class="center description"><strong>Description: </strong></h4>
-  <%= @recipe.description.capitalize %>
-  <p>Created by: </p>
-    <p><small><%= @recipe.chef.chefname %></small></p>
-    <p class="text-md-right">created <%= time_ago_in_words(@recipe.created_at) %> ago</p>
+  <%= simple_format(@recipe.description.capitalize) %>
+  <div class="pull-right">
+  <p class="center">
+    <em>Created by: </em>
   </p>
+  <p class="center">
+    <%= link_to gravatar_for(@recipe.chef), recipes_path%>
+  </p>
+  <p class="center">
+    <small><%= @recipe.chef.chefname.capitalize %></small>
+    <div class= "pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
+  </p>
+</div>
 </div>
