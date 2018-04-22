@@ -7,6 +7,11 @@ class RecipeTest < ActiveSupport::TestCase
     @recipe = @chef.recipes.build(name: "paella", description: "great dish for all the family")
   end
 
+  test "recipe without chef should be invalid" do
+    @recipe.chef_id = nil
+    assert_not @recipe.valid?
+  end
+
   # Test to validate the name of the recipe
   # The same can be done with the description
   test "recipe should be valid" do
