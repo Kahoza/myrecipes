@@ -1,18 +1,11 @@
 <h1 align="center"><%= @recipe.name.capitalize %></h1>
 <hr/>
-<div class="well col-md-8 col-md-offset-2">
-  <h4 class="center description"><strong>Description: </strong></h4>
+<div class="container col-md-12 show-page">
+  <h4 class="show-description col-md-12 "><strong>Description: </strong></h4>
   <%= simple_format(@recipe.description.capitalize) %>
-  <div class="pull-right">
-  <p class="center">
-    <em>Created by: </em>
-  </p>
-  <p class="center">
-    <%= link_to gravatar_for(@recipe.chef), recipes_path%>
-  </p>
-  <p class="center">
-    <small><%= @recipe.chef.chefname.capitalize %></small>
-    <div class= "pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
-  </p>
-</div>
+  <div class="center col-md-3 offset-9">
+    <p class="center">Created <%= time_ago_in_words(@recipe.created_at) %> ago by <strong><%= @recipe.chef.chefname.upcase %></strong>
+    </p>
+    <p><%= link_to gravatar_for(@recipe.chef), recipes_path%></p>
+  </div>
 </div>
