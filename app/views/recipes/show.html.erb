@@ -8,4 +8,7 @@
     </p>
     <p><%= link_to gravatar_for(@recipe.chef), recipes_path%></p>
   </div>
+  <div class="recipe-actions">
+    <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-danger btn-lg" %>
+  </div>
 </div>
