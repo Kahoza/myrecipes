@@ -1,24 +1,4 @@
-<% if @recipe.errors.any? %>
-<div class="row">
-  <div class="col-md-8 offset-md-2">
-    <div class="card bg-danger">
-      <div class="card-header">
-        <p class=card-title>
-          <%= pluralize(@recipe.errors.count, "error") %>
-          prohibited this <%= @recipe.class %> from being saved:
-        </p>
-        <div class="card-body">
-          <ul>
-            <% @recipe.errors.full_messages.each do |message|%>
-            <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
+<%= render 'shared/errors', obj: @recipe %>
 
 <div class="row">
   <div class="col-md-12">
