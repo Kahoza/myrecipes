@@ -10,8 +10,9 @@
   margin-top: 0px;
 }
 
-.well {
-  margin-righ: 0px;
+.well-index{
+  margin-righ: 12px;
+  padding-left: 0px;
   a {
     color: #DC0019;
     &:hover {
@@ -19,10 +20,17 @@
       color: black;
     }
   }
+  h3 {
+    margin-top: 5px;
+  }
 
 }
 
-.chef_info {
+.chef-info {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 
 }
 
