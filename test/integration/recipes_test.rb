@@ -31,4 +31,31 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_match @recipe.description, response.body
     assert_match @chef.chefname, response.body
   end
+
+  test "create new valid recipe" do
+    get new_recipe_path
+    assert_template 'recipes/new'
+    name_of_recipe = "Chicken saute"
+    description_of_recipe = "Add chicken, add vegetables, cook for 20 minutes and you are ready!"
+    assert_difference 'Recipe.count', 1 do
+      post recipes_path, params: {recipe: {name: name_of_recipe, description: description_of_recipe}}
+    end
+    follow_redirect!
+    assert_match name_of_recipe.capitalize, response.body
+    assert_match description_of_recipe, response.body
+  end
+
+  test "reject invalid recipe" do
+    get new_recipe_path
+    assert_template 'recipes/new'
+    assert_no_difference 'Recipe.count' do
+      # The recipe should be rejected if the name & description are empty
+      post recipes_path, params: {recipe: {name: " ", description: " "}}
+    end
+    assert_template 'recipes/new'
+    # If they both show up it means that there are errors
+    assert_select 'p.card-title'
+    assert_select 'div.card-body'
+  end
+
 end
