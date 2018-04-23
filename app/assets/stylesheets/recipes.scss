@@ -37,3 +37,22 @@
 .show-description {
   padding-left: 0px;
 }
+
+
+// Style for chefs index
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chef-title a {
+  color:  #DC0019;
+  font-weight: bold;
+  font-size: 25px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
