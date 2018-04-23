@@ -1,1 +1,11 @@
-<h1>Welcome to Myrecipes</h1>
+<h1 class= "center col-md-8 offset-md-2">Meet <%= @chef.chefname %></h1>
+<hr/>
+
+<div class="row">
+  <div class="col-md-4 offset-4 center">
+    <%= gravatar_for @chef, size: 150 %>
+  </div>
+</div>
+
+<h4 align="center"><%= @chef.chefname %>'s recipes</h4>
+<%= render 'recipes/recipe', obj: @chef.recipes %>
