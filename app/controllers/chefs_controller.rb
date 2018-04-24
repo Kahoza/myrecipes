@@ -1,6 +1,6 @@
 class ChefsController < ApplicationController
 
-  before_action :set_chef, only: {:show, :edit, :update, :delete}
+  before_action :set_chef, only: [:show, :edit, :update, :delete]
 
   def index
     @chefs = Chef.paginate(page: params[:page], per_page: 6)
