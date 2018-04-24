@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     # To be changed once chefs are added to the project
     # For now, the recipes will be assigned to the first chef created
-    @recipe.chef = Chef.first
+    @recipe.chef = current_chef
     if @recipe.save
       flash[:success] = "Recipe was successfully created!"
       redirect_to recipe_path(@recipe)
