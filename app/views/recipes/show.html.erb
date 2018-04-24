@@ -6,7 +6,7 @@
   <div class="center col-md-3 offset-9">
     <p class="center">Created <%= time_ago_in_words(@recipe.created_at) %> ago by <strong><%= @recipe.chef.chefname.upcase %></strong>
     </p>
-    <p><%= link_to gravatar_for(@recipe.chef), recipes_path%></p>
+    <p><%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %></p>
   </div>
   <div class="recipe-actions">
     <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
