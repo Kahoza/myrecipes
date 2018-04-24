@@ -1,0 +1,30 @@
+<h1 align="center">Welcome back</h1>
+<hr />
+
+
+<%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
+<div class="form-group">
+  <div class="control-label col-md-8 offset-md-2">
+    <%= f.label :email, "Your email" %>
+  </div>
+  <div class="col-md-8 offset-md-2">
+    <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="control-label col-md-8 offset-md-2">
+    <%= f.label :password, "Your password" %>
+  </div>
+  <div class="col-md-8 offset-md-2">
+    <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-md-8 offset-md-2">
+    <%= f.submit "Log in", class: "btn btn-danger btn-lg" %>
+  </div>
+</div>
+<% end %>
+<div class="center col-md-8 offset-md-2">
+  [<%= link_to "Cancel request and return to recipes", recipes_path %>]
+</div>
