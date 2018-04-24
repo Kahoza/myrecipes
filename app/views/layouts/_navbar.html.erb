@@ -13,6 +13,21 @@
         <a class="nav-link a-navbar" href="/recipes">Recipes <span class="sr-only">(current)</span></a>
       </li>
     </ul>
+
+    <div class="dropdown-left">
+      <ul>
+      <ul class="nav-item dropdown navbar-left"></ul>
+       <a class="nav-link dropdown-toggle a-navbar" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredients</a>
+       <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+        <ul>
+          <%= link_to "Ingredients", ingredients_path, class: 'dropdown-item btn-css-class', style: 'color:black' %>
+        </ul>
+        <ul>
+        </ul>
+      </div>
+      </ul>
+    </div>
+
     <div class="dropdown">
     <ul>
       <ul class="nav-item dropdown navbar-right"></ul>
