@@ -10,7 +10,7 @@
         <a class="nav-link" href="/chefs">Chefs <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="/login">Log in</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -20,13 +20,16 @@
           <ul>
             <%= link_to "Add a new recipe", new_recipe_path, class: 'btn-css-class', style: 'color:black' %>
           </ul>
-          <a class="dropdown-item" href="#">Another action</a>
+           <ul>
+            <%= link_to "Log out", logout_path, method: :delete, class: 'btn-css-class', style: 'color:black' %>
+          </ul>
+          <a class="dropdown-item" href="/#">Something</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled" href="/signup">Sign up</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
