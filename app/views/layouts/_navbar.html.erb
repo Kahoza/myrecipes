@@ -17,7 +17,7 @@
     <ul>
       <ul class="nav-item dropdown navbar-right"></ul>
       <% if logged_in? %>
-      <a class="nav-link dropdown-toggle a-navbar" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_chef.chefname.upcase %>'s profile
+      <a class="nav-link dropdown-toggle a-navbar" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_chef.chefname.upcase %>'s profile <small><%= "Admin" if current_chef.admin? %></small>
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <ul>
