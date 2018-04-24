@@ -1,4 +1,11 @@
 <h1 align="center">Display all recipes</h1>
 <hr />
-
+<div class="pagination">
+<%= will_paginate %>
+</div>
 <%= render 'recipe', obj: @recipes %>
+<div class="pagination">
+  <%= will_paginate %>
+</div>
+
+
