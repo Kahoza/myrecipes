@@ -2,6 +2,7 @@
 <hr/>
 
 <div class="center col-md-4 offset-4">
+  <%= will_paginate %>
   <% @chefs.each do |chef| %>
     <ul class="listing">
       <div class="card">
@@ -13,4 +14,5 @@
       </div>
     </ul>
   <% end %>
+  <%= will_paginate %>
 </div>
