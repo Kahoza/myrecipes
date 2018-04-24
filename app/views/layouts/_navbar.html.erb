@@ -1,40 +1,41 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-lg " style="background-color: #FFFFFF;">
   <%= link_to "MyRecipes", root_path, class: "navbar-brand", id: "logo"%>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="/chefs">Chefs <span class="sr-only">(current)</span></a>
+        <a class="nav-link a-navbar" href="/chefs">Chefs <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Log in</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Recipes
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <ul>
-            <%= link_to "Add a new recipe", new_recipe_path, class: 'btn-css-class', style: 'color:black' %>
-          </ul>
-           <ul>
-            <%= link_to "Log out", logout_path, method: :delete, class: 'btn-css-class', style: 'color:black' %>
-          </ul>
-          <a class="dropdown-item" href="/#">Something</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="/signup">Sign up</a>
+      <li class="nav-item active">
+        <a class="nav-link a-navbar" href="/recipes">Recipes <span class="sr-only">(current)</span></a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-danger" type="submit">Search</button>
-    </form>
+    <div class="dropdown">
+    <ul>
+      <ul class="nav-item dropdown navbar-right"></ul>
+      <% if logged_in? %>
+      <a class="nav-link dropdown-toggle a-navbar" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_chef.chefname.upcase %>'s profile
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <ul>
+          <%= link_to "My profile", chef_path(current_chef), class: 'dropdown-item btn-css-class', style: 'color:black' %>
+        </ul>
+        <ul>
+          <%= link_to "Edit my profile", edit_chef_path(current_chef), class: 'dropdown-item btn-css-class', style: 'color:black' %>
+        </ul>
+        <ul>
+          <%= link_to "Add a new recipe", new_recipe_path, class: 'dropdown-item btn-css-class', style: 'color:black' %>
+        </ul>
+        <div class="dropdown-divider"></div>
+          <ul><%= link_to  "Log out", logout_path, method: :delete, class: 'dropdown-item btn-css-class', style: 'color:black'  %></ul>
+          <% else %>
+          <a class="nav-link a-navbar" href="/login">Login <span class="sr-only"></span></a>
+        <% end %>
+      </div>
+    </ul>
+  </div>
   </div>
 </nav>
