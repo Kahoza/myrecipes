@@ -8,6 +8,7 @@ class ChefsEditTest < ActionDispatch::IntegrationTest
   end
 
   test "reject an invalid edit profile" do
+    sign_in_as(@chef, "password")
     get edit_chef_path(@chef)
     # Since we confirm the password, we don't require the chef to provide password again when updating profile
     assert_template 'chefs/edit'
@@ -17,6 +18,7 @@ class ChefsEditTest < ActionDispatch::IntegrationTest
   end
 
   test "accept valid edit profile" do
+    sign_in_as(@chef, "password")
     get edit_chef_path(@chef)
     assert_template 'chefs/edit'
     # Since we confirm the password, we don't require the chef to provide password again when updating profile
