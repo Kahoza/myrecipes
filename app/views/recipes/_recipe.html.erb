@@ -9,7 +9,7 @@
     <h3><%= link_to recipe.name.capitalize, recipe_path(recipe) %></h3>
     <p><%= truncate(recipe.description.capitalize, length: 180) %></p>
     <p>
-      <span class="quiet"><small>Created <%= time_ago_in_words(recipe.created_at) %> ago</small>
+      <span class="quiet"><small>Created <%= time_ago_in_words(recipe.created_at) %> ago by <strong><%= recipe.chef.chefname.capitalize %></strong></small>
     </p>
       <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
         <div class="index-btn">
