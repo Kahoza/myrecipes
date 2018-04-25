@@ -19,3 +19,19 @@
     <%= link_to "Return to recipes", recipes_path, class: "btn btn-dark btn-lg" %>
   </div>
 </div>
+
+<% if @recipe.comments != 0 %>
+<div class="row">
+  <div class= col-md-12>
+    <h3>Comments: </h3>
+    <div id="messages">
+      <%= render partial: 'comments/comments', object: @comments %>
+    </div>
+  </div>
+</div>
+<% else %>
+<div class="row">
+  <div class=" col-md-12 "></div>
+  <h3>This recipe has no comments yet</h3>
+</div>
+<% end %>
