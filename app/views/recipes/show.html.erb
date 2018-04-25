@@ -3,6 +3,9 @@
 <div class="container col-md-12 show-page">
   <h4 class="show-description col-md-12 "><strong>Description: </strong></h4>
   <%= simple_format(@recipe.description.capitalize) %>
+  <% if @recipe.ingredients.any? %>
+  <p>Ingredients: <%= render @recipe.ingredients %></p>
+  <% end %>
   <div class="center col-md-3 offset-9">
     <p class="center">Created <%= time_ago_in_words(@recipe.created_at) %> ago by <strong><%= @recipe.chef.chefname.upcase %></strong>
     </p>

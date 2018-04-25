@@ -19,7 +19,18 @@
         <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Enter steps of the recipe" %>
       </div>
     </div>
-    <div class="form-grou">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <p>Choose the <strong>main </strong>ingredients</p>
+          <hr/>
+          <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |check| %>
+          <% check.label(class: "input_checkbox label_ingredient") {check.check_box(class: "input_checkbox") + check.text.capitalize} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
       <div class="col-md-8 offset-md-2">
         <%= f.submit class: "btn btn-danger btn-lg" %>
       </div>
