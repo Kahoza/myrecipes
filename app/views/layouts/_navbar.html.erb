@@ -22,11 +22,9 @@
         <ul>
           <%= link_to "Ingredients", ingredients_path, class: 'dropdown-item btn-css-class', style: 'color:black' %>
         </ul>
-        <ul>
           <% Ingredient.all.each do |ingredient| %>
             <ul><%= link_to ingredient.name.capitalize, ingredient_path(ingredient), class:'dropdown-item btn-css-class', style: 'color:black' %></ul>
           <% end %>
-        </ul>
         <div class="dropdown-divider"></div>
           <ul><%= link_to  "New ingredient", new_ingredient_path, method: :delete, class: 'dropdown-item btn-css-class', style: 'color:black'  %></ul>
       </div>
