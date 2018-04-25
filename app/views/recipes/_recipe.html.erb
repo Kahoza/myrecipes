@@ -8,6 +8,9 @@
   <div class="col-md-10 well-index">
     <h3><%= link_to recipe.name.capitalize, recipe_path(recipe) %></h3>
     <p><%= truncate(recipe.description.capitalize, length: 180) %></p>
+    <% if recipe.ingredients.any? %>
+      <p>Ingredients: <%= render recipe.ingredients %></p>
+    <% end %>
     <p>
       <span class="quiet"><small>Created <%= time_ago_in_words(recipe.created_at) %> ago by <strong><%= recipe.chef.chefname.capitalize %></strong></small>
     </p>
