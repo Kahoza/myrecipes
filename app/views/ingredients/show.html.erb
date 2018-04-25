@@ -1,0 +1,13 @@
+<h1 class= "center col-md-8 offset-md-2"><%= @ingredient.name.upcase %></h1>
+<hr/>
+
+<% if @ingredient.recipes.count != 0 %>
+  <div class="col-md-4 offset-4 center">
+    <h4>Recipe's containing <%= @ingredient.name %></h4>
+  </div>
+  <%= will_paginate @ingredient_recipes %>
+  <%= render 'recipes/recipe', obj: @ingredient_recipes %>
+  <%= will_paginate @ingredient_recipes %>
+<% else %>
+  <h4 align="center">No recipes yet</h4>
+<% end %>
