@@ -9,7 +9,7 @@ module ApplicationCable
     def disconnect
     end
 
-    protected
+    private
 
     def find_current_user
       if current_chef = Chef.find_by(id: cookies.signed[:chef_id])
