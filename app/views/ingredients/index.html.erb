@@ -10,7 +10,7 @@
           <li class="chef-title"><p><%= link_to ingredient.name.capitalize, ingredient_path(ingredient) %></p></li>
           <li><small><%= pluralize(ingredient.recipes.count, "recipe") if ingredient.recipes %></small></li>
           <% if logged_in? && current_chef.admin? %>
-            <li><%= link_to "Edit this ingredient", ingredient_path(ingredient) %></li>
+            <li><%= link_to "Edit this ingredient", edit_ingredient_path(ingredient) %></li>
           <% end %>
         </div>
       </div>
