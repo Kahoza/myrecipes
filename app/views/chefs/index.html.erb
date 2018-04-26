@@ -1,15 +1,15 @@
 <h1 class= "center col-md-8 offset-md-2">Meet our chefs</h1>
 <hr/>
 
-<div class="center col-md-4 offset-4">
+<div class="col-sm-6 offset-3 ">
   <%= will_paginate %>
   <% @chefs.each do |chef| %>
     <ul class="listing">
-      <div class="card">
+      <div class="card cards-chef">
         <div >
-          <li><%= link_to gravatar_for(chef), chef_path(chef) %></li>
-          <li class="chef-title"><p><%= link_to chef.chefname.capitalize, chef_path(chef) %></p></li>
-          <li><small><%= pluralize(chef.recipes.count, "recipe") if chef.recipes %></small></li>
+          <li class="center chef-index-gravatar"><%= link_to gravatar_for(chef), chef_path(chef) %></li>
+          <li class="chef-title center"><p><%= link_to chef.chefname.capitalize, chef_path(chef) %></p></li>
+          <li class="chef-title center "><%= pluralize(chef.recipes.count, "recipe") if chef.recipes %></li>
           <% if logged_in? && current_chef.admin? && !chef.admin? %>
             <li><%= link_to "Delete this chef", chef_path(chef), method: :delete,
                    data: {confirm: "Are you sure you want to delete this chef and all associated recipes?"} %></li>
