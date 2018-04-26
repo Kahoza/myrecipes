@@ -6,11 +6,10 @@ class SessionsController < ApplicationController
   def create
     chef = Chef.find_by(email: params[:session][:email].downcase)
     if chef && chef.authenticate(params[:session][:password])
-      # Stores the info about the chefs session in the cookies of our browser
       session[:chef_id] = chef.id
       cookies.signed[:chef_id] = chef.id
       flash[:success] = "You have successfully logged in"
-      redirect_to chef_path(chef) # You can also use redirect_to chef
+      redirect_to chef
     else
       flash.now[:danger] = "There was something wrong with your login information"
       render 'new'
