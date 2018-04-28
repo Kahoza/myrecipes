@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def about
+    @no_footer = true
   end
 
   def help

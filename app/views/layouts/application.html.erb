@@ -15,6 +15,6 @@
     <div class="container">
     <%= yield %>
     </div>
-    <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' unless @no_footer %>
   </body>
 </html>
