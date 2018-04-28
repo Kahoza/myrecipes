@@ -1,17 +1,17 @@
 <h1 align="center"><%= @recipe.name.capitalize %></h1>
 <hr/>
-<div class="container col-md-12 show-page">
-  <h4 class="show-description col-md-12 "><strong>Description: </strong></h4>
+<div class="col-md-12 show-page no-padding">
+  <h4 class="show-description col-md-12 no-padding"><strong>Description: </strong></h4>
   <%= simple_format(@recipe.description.capitalize) %>
   <% if @recipe.ingredients.any? %>
   <p>Ingredients: <%= render @recipe.ingredients %></p>
   <% end %>
-  <div class="center col-md-3 offset-9">
-    <p class="center">Created <%= time_ago_in_words(@recipe.created_at) %> ago by <strong><%= @recipe.chef.chefname.upcase %></strong>
+  <div class="center col-md-3 offset-9 no-padding">
+    <p class="right">Created <%= time_ago_in_words(@recipe.created_at) %> ago by <strong><%= @recipe.chef.chefname.upcase %></strong>
     </p>
     <p><%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %></p>
   </div>
-  <div class="recipe-actions">
+  <div class="col-md-10 text-left no-padding recipe-actions">
     <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
       <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-dark btn-lg" %>
       <%= link_to "Delete this recipe", recipe_path(@recipe), method: :delete, data: {confirm: "Are you sure you want to delete this recipe?"}, class: "btn btn-danger btn-lg" %>
@@ -19,6 +19,18 @@
     <%= link_to "Return to recipes", recipes_path, class: "btn btn-dark btn-lg" %>
   </div>
 </div>
+<br>
+<div class="row liking">
+  <div class="col-md-12 likes-section">
+    <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+      <i class="fa fa-thumbs-up"></i>
+    <% end %> <%= @recipe.thumbs_up_total %> | <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+      <i class="fa fa-thumbs-down"></i>
+    <% end %> <%= @recipe.thumbs_down_total %>
+  </div>
+</div>
+
+
 
 <hr></hr>
 <% if logged_in? %>

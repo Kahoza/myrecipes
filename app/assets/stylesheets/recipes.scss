@@ -63,3 +63,25 @@
     color: white;
   }
 }
+
+
+// Show page
+.no-padding {
+  padding: 0 !important;
+}
+
+// Likes
+.liking {
+  padding-right: 10px;
+}
+
+.likes-section i{
+  color: black;
+  font-size: 30px;
+  letter-spacing: 5px;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+
