@@ -1,4 +1,41 @@
 <h1 class= "center col-md-8 offset-md-2">Update your profile</h1>
 <hr/>
 
-<%= render 'form' %>
+<%= render 'shared/errors', obj: @chef %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(@chef, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <div class="form-group">
+      <div class="control-label col-md-8 offset-md-2">
+        <%= f.label :chefname, "Your name" %>
+      </div>
+      <div class="col-md-8 offset-md-2">
+        <%= f.text_field :chefname, class: "form-control", placeholder: "Enter your name", autofocus: true %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="control-label col-md-8 offset-md-2">
+        <%= f.label :email, "Your email" %>
+      </div>
+      <div class="col-md-8 offset-md-2">
+        <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>
+      </div>
+    </div>
+      <div class="form-group">
+        <div class="col-md-8 offset-md-2">
+        <%= f.file_field :photo_chef %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-8 offset-md-2">
+        <%= f.submit class: "btn btn-danger btn-lg",  placeholder: "Update my profile" %>
+      </div>
+    </div>
+    <div class="center col-md-8 offset-md-2">
+      [<%= link_to "Cancel request and return to recipes", recipes_path %>]
+    </div>
+  </div>
+  <% end %>
+</div>
+

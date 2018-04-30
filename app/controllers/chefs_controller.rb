@@ -51,7 +51,7 @@ class ChefsController < ApplicationController
   private
 
   def chef_params
-    params.require(:chef).permit(:chefname, :email, :password, :password_confirmation)
+    params.require(:chef).permit(:chefname, :email, :password, :password_confirmation, :photo_chef)
   end
 
   def set_chef

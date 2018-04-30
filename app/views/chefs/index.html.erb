@@ -7,7 +7,7 @@
     <ul class="listing">
       <div class="card cards-chef">
         <div >
-          <li class="center chef-index-gravatar"><%= link_to gravatar_for(chef), chef_path(chef) %></li>
+          <li class="center chef-index-photo"><%= link_to cl_image_tag(chef.photo_chef), chef_path(chef) %></li>
           <li class="chef-title center"><p><%= link_to chef.chefname.capitalize, chef_path(chef) %></p></li>
           <li class="chef-title center "><%= pluralize(chef.recipes.count, "recipe") if chef.recipes %></li>
           <% if logged_in? && current_chef.admin? && !chef.admin? %>
