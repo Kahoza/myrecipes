@@ -1,6 +1,8 @@
 <h1 align="center"><%= @recipe.name.capitalize %></h1>
 <hr/>
-<div class="col-md-12 show-page no-padding">
+<div class="center recipe-picture-show">
+  <%= image_tag(@recipe.photo) %>
+</div>
   <h4 class="show-description col-md-12 no-padding"><strong>Description: </strong></h4>
   <%= simple_format(@recipe.description.capitalize) %>
   <% if @recipe.ingredients.any? %>
@@ -50,8 +52,9 @@
         </div>
       </div>
       <% end %>
+      <% end %>
     </div>
-<% end %>
+
 
 <% if @recipe.comments != 0 %>
   <div class="row" >
@@ -69,3 +72,5 @@
     </div>
   </div>
 <% end %>
+
+

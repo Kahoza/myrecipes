@@ -14,6 +14,9 @@ gem 'jquery-rails'
 
 gem 'figaro'
 
+gem 'cloudinary'
+
+gem 'carrierwave', '~> 1.2'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

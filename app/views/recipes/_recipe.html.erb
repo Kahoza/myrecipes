@@ -2,7 +2,7 @@
   <div class="row" id="card-index">
     <div class="col-md-2 chef-info">
     <section class="chef_info center">
-      <%= gravatar_for(recipe.chef, size: 100) %>
+      <%= cl_image_tag recipe.photo, height: 100, width: 150, crop: :fill if recipe.photo? %>
     </section>
   </div>
   <div class="col-md-10 well-index no-padding">
@@ -31,8 +31,6 @@
     <% end %> <%= recipe.thumbs_down_total %>
   </div>
 </div>
-
-
   </div>
 </div>
 <% end %>
