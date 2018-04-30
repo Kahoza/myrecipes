@@ -1,7 +1,8 @@
 <h1 align="center"><%= @recipe.name.capitalize %></h1>
 <hr/>
+<div class="col-md-12 show-page no-padding">
 <div class="center recipe-picture-show">
-  <%= image_tag(@recipe.photo) %>
+  <%= image_tag(@recipe.photo, height: 350, width: 400, crop: :fill, alt: "Recipe's picture") %>
 </div>
   <h4 class="show-description col-md-12 no-padding"><strong>Description: </strong></h4>
   <%= simple_format(@recipe.description.capitalize) %>
@@ -11,7 +12,7 @@
   <div class="center col-md-3 offset-9 no-padding">
     <p class="right">Created <%= time_ago_in_words(@recipe.created_at) %> ago by <strong><%= @recipe.chef.chefname.upcase %></strong>
     </p>
-    <p><%= link_to image_tag(@recipe.chef.photo_chef, height: 150, width: 200, crop: :fill), chef_path(@recipe.chef)%></p>
+    <p class="chef-photo"><%= link_to cl_image_tag(@recipe.chef.photo_chef, height: 150, width: 200, crop: :fill, alt: "Chef profile's picture"), chef_path(@recipe.chef)%></p>
   </div>
   <div class="col-md-10 text-left no-padding recipe-actions">
     <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
@@ -32,8 +33,6 @@
   </div>
 </div>
 
-
-
 <hr></hr>
 <% if logged_in? %>
   <div class="form-group">
@@ -47,7 +46,7 @@
         </div>
       </div>
       <div>
-        <div class="col-md-12">
+        <div class="center col-md-3 offset-9">
           <%= f.submit "Submit comment", class: "btn btn-danger btn-lg" %>
         </div>
       </div>
@@ -58,7 +57,7 @@
 
 <% if @recipe.comments != 0 %>
   <div class="row" >
-    <div class="col-md-12">
+    <div class="col-md-12 no-padding">
       <h3 >Previous Comments: </h3>
         <div id="messages">
           <%= render partial: 'comments/comments', object: @comments %>
@@ -67,10 +66,11 @@
   </div>
 <% else %>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 no-padding">
       <h3>No Comments Yet!</h3>
     </div>
   </div>
 <% end %>
+</div>
 
 

@@ -29,8 +29,9 @@
 
 .chef-info img{
   padding: 0;
-  margin-top: 65px;
-  margin-bottom: 65px;
+  margin-top: 85px;
+  margin-bottom: 85px;
+  border-radius: 4px;
 
 }
 
@@ -53,6 +54,10 @@
   &:hover {
     text-decoration: none;
   }
+}
+
+.chef-index-photo img{
+  border-radius: 4px;
 }
 
 // Recipes Page
@@ -80,6 +85,14 @@
 // Show page
 .no-padding {
   padding: 0 !important;
+}
+
+.chef-photo img{
+  border-radius: 4px;
+}
+
+.recipe-picture-show img{
+  border-radius: 4px;
 }
 
 // Likes

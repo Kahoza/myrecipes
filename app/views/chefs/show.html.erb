@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-4 offset-4 center">
-    <%= cl_image_tag @chef.photo_chef, height: 150, width: 200, crop: :fill %>
+    <%= cl_image_tag @chef.photo_chef, height: 150, width: 200, crop: :fill, alt: "Chef profile's picture" %>
   </div>
 </div>
 <% if @chef.recipes.count != 0 %>
