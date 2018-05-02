@@ -12,5 +12,6 @@ class PagesController < ApplicationController
   end
 
   def testimonials
+    @no_footer = true
   end
 end
