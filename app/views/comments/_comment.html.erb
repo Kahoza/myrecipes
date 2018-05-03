@@ -1,15 +1,15 @@
-<div class="row">
+<div class="row comment-display">
   <div class="col-md-2">
     <section class="chef_info center">
-      <%= gravatar_for(comment.chef, size: 60) %>
+      <%= cl_image_tag(@recipe.chef.photo_chef, height: 80, width: 100, crop: :fill, alt: "Chef's picture") %>
     </section>
   </div>
   <div class="col-md-8 well">
     <p><%= comment.description %></p>
     <p>
-      <span class="quiet"><small>Created:
+      <span class="quiet"><small>Posted:
                           <%= time_ago_in_words(comment.created_at) %> ago by
-                          <%= comment.chef.chefname %></small></span>
+                          <strong><%= comment.chef.chefname %></strong></small></span>
     </p>
   </div>
 </div>

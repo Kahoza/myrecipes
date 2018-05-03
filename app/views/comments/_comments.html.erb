@@ -2,7 +2,9 @@
   <%= will_paginate comments %>
 </div>
 <% comments.each do |comment| %>
+<div class="card comment-card">
   <%= render(partial: 'comments/comment', object: comment) %>
+  </div>
 <% end %>
 <div align="center">
   <%= will_paginate comments %>
